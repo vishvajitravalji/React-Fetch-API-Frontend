@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap');
+
+body{
+  font-family: 'Raleway', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#bodyContainer{
+  background-color: rgb(206, 206, 192)
 }
+
+.studentContainer{
+  border-radius: 10px;
+  background-color: white;
+  margin: auto;
+  margin-top: 5%;
+  width: 65%;
+  height: 800px;
+  padding: 10px;
+  overflow: auto;
+}
+
+/* remove the side scroll on safari and chrome */
+.studentContainer::-webkit-scrollbar { 
+  display: none; 
+}
+
+.studentLeft{
+  padding: 30px;
+}
+
+.studentPictureContainer{
+  border: 1px solid lightgray;
+  width: 130px;
+  height: 130px;
+  text-align: center;
+  display:block;
+  align-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+}
+
+.studentPicture{
+  width:100%;
+  height:100%;
+}
+
+.student{
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+}
+
+.student:last-child{
+  border-bottom: none;
+}
+
+.studentRight{
+  margin-left: 0px;
+}
+
+.studentNameContainer{
+  font-weight: 600;
+  font-size: 50px;
+  margin-top: 10px;
+
+}
+
+.studentDetailContainer{
+  font-weight: 100;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.studentDetail{
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+
