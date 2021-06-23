@@ -26,8 +26,9 @@ const Student = ({student}) => {
                     <p className='studentDetail'>Average: {averageGrade(student.grades)}%</p>
                 </div>
             </div>
-            
-            
+            <div className="buttonFarRight">
+                <button type="button">+</button>
+            </div>
             
         </div>
     )

@@ -8,13 +8,12 @@ function App() {
     getStudents();
   }, [])
 
-  const [students, setStudents] = useState([])
+  const [students, setStudents] = useState([]);
 
   const getStudents = async() => {
       try{
           const response = await axios.get("https://api.hatchways.io/assessment/students");
           setStudents(response.data.students);
-          console.log(response.data.students);
       }catch(err){
           alert(err.message);
       }
