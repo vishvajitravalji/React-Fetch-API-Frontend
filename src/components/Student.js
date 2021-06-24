@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import { FaPlus } from 'react-icons/fa';
+import { FaMinus } from 'react-icons/fa';
+
 
 //This function takes an array of grades and returns the average
 function averageGrade(gradeArray){
@@ -7,10 +10,6 @@ function averageGrade(gradeArray){
         sum = sum + parseInt(gradeArray[position]);
     }
     return sum / gradeArray.length;
-}
-
-function expandMe(gradeArray){
-
 }
 
 const Student = ({student}) => {
@@ -37,14 +36,14 @@ const Student = ({student}) => {
                 {
                     show?<div className='studentGradeContainer'>
                         {student.grades.map((studentGradeList, index)=>(
-                            <p className='studentDetail'>Test {index + 1}: {studentGradeList}%</p>
+                            <p className='studentDetail'>Test {index + 1}: &emsp;&ensp;{studentGradeList}%</p>
                         ))}
                     </div>:null
                 }
             </div>
             <div className='buttonFarRight'>
                 <div className='buttonContainer'>
-                    <button className='buttonExpand' onClick={ () => setShow(!show)}>{show? "-" : "+"}</button>
+                    <button className='buttonExpand' onClick={ () => setShow(!show)}>{show? <FaMinus/> : <FaPlus/>}</button>
                 </div>
             </div>
             
