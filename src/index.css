@@ -8,6 +8,10 @@ body{
   background-color: rgb(206, 206, 192)
 }
 
+.student{
+  display:block;
+}
+
 .searchBar{
   border: 0;
   outline: 0;
@@ -94,4 +98,29 @@ body{
   margin-top: 5px;
   margin-bottom:5px;
 }
+
+.buttonFarRight{
+ margin-left: auto;
+}
+
+.buttonContainer{
+  margin-left: 10px;
+}
+
+.buttonExpand{
+  border: none;
+  background:transparent;
+  font-size: 70px;
+  font-weight: bold;
+  color: lightgrey;
+}
+
+.studentGradeContainer{
+  font-weight: 100;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+
+
 
