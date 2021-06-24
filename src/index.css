@@ -21,14 +21,20 @@ body{
   height: 50px;
   font-weight: 100;
   font-size: 30px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
   font-family: 'Raleway', sans-serif;
 }
 
 /* added animation for search bar's border bottom */
 .searchBar:focus{
   border-bottom: 2px solid black;
+}
+
+.searchTagBar{
+  margin-top: 20px;
+  margin-bottom: 10px;
+
 }
 
 .studentContainer{
@@ -53,8 +59,8 @@ body{
 
 .studentPictureContainer{
   border: 1px solid lightgray;
-  width: 130px;
-  height: 130px;
+  width: 165px;
+  height: 165px;
   text-align: center;
   display:block;
   align-content: center;
@@ -98,6 +104,7 @@ body{
   margin-top: 5px;
   margin-bottom:5px;
   font-weight: 400;
+  font-size: 20px;
 }
 
 .buttonFarRight{
@@ -115,6 +122,12 @@ body{
   font-size: 40px;
   font-weight: bold;
   color: lightgrey;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.buttonExpand:hover{
+  color: black;
 }
 
 .studentGradeContainer{
@@ -122,6 +135,42 @@ body{
   margin-top: 15px;
   margin-left: 30px;
 }
+
+.studentAddTagContainer{
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom:30px;
+}
+
+.addTagBar{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid lightgray;
+  width: 50%;
+  height: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.studentTagContainer{
+  margin-left: 32px;
+  margin-top: 25px;
+  margin-bottom:20px;
+}
+
+.studentTag{
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 3px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
 
 
 

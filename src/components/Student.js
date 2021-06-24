@@ -23,7 +23,7 @@ const Student = ({student}) => {
                     <img className='studentPicture' src={student.pic} alt=""></img>
                 </div>
             </div>
-            <div className='studentRight' id="test">
+            <div className='studentRight'>
                 <div className='studentNameContainer'>
                     <label>{student.firstName.toUpperCase()} {student.lastName.toUpperCase()}</label>
                 </div>
@@ -40,13 +40,21 @@ const Student = ({student}) => {
                         ))}
                     </div>:null
                 }
+                <div className='studentTagContainer'>
+                    <label className='studentTag'>Tag1</label>
+                    <label className='studentTag'>Tag2</label>
+                    
+
+                </div>
+                <div className='studentAddTagContainer'>
+                    <input className="addTagBar" type='text' placeholder="Add a Tag"/>
+                </div>
             </div>
             <div className='buttonFarRight'>
                 <div className='buttonContainer'>
                     <button className='buttonExpand' onClick={ () => setShow(!show)}>{show? <FaMinus/> : <FaPlus/>}</button>
                 </div>
-            </div>
-            
+            </div> 
         </div>
     )
 }

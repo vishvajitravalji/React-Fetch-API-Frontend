@@ -16,6 +16,9 @@ const Students = ({students}) => {
             
             {/*search bar*/}
             <input className="searchBar" type='text' placeholder="Search by name" onChange={(event) =>{setSearchTerm(event.target.value);}}/>
+
+            {/* Part 5 */}
+            <input className="searchBar searchTagBar" type='text' placeholder="Search by tag"/>
             
             {/* filter map results based on Search Bar input */}
             {students.filter((val)=>{
