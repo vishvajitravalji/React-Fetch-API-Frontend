@@ -14,7 +14,9 @@ function averageGrade(gradeArray){
 
 const Student = ({student}) => {
 
+    // used to deal with showing list of grades and changing + to -
     const [show, setShow] = useState(false);
+    const [tag, setTag] = useState("");
 
     return (
         <div className='student'>
@@ -33,21 +35,39 @@ const Student = ({student}) => {
                     <p className='studentDetail'>Skill: {student.skill}</p>
                     <p className='studentDetail'>Average: {averageGrade(student.grades)}%</p>
                 </div>
+                {/* Show and Collapse the list of student grades */}
                 {
                     show?<div className='studentGradeContainer'>
                         {student.grades.map((studentGradeList, index)=>(
-                            <p className='studentDetail'>Test {index + 1}: &emsp;&ensp;{studentGradeList}%</p>
+                            <p key={index + 1} className='studentDetail'>Test {index + 1}: &emsp;&ensp;{studentGradeList}%</p>
                         ))}
                     </div>:null
                 }
-                <div className='studentTagContainer'>
-                    <label className='studentTag'>Tag1</label>
-                    <label className='studentTag'>Tag2</label>
-                    
+                {/* Part 5 */}
+                {
+                    // <div className='studentTagContainer'>
+                    //         {student.map((eachTag, index)=>(
+                    //             <label key={index + 1} className='studentTag'>{eachTag}</label>
+                    //         ))}
+                    // </div>
+                }
 
-                </div>
                 <div className='studentAddTagContainer'>
-                    <input className="addTagBar" type='text' placeholder="Add a Tag"/>
+
+                    <input className="addTagBar" type='text' placeholder='Add a Tag' onChange={(event)=> {setTag(event.target.value);}} onKeyPress={(event) =>{
+                        //trigger if enter key is hit in the tag input box
+                        if(event.key === 'Enter'){
+                            //if tag property has been exist in Student JSON Object then push current input into it
+                            if({student}.student["tag"]){
+                                student.tag = [...student.tag, tag]
+                            //else create tag property in Student JSON Object with the current input in it
+                            }else{
+                                student.tag = [tag]
+                            }
+
+                            console.log({student});
+                        }
+                    }}/>
                 </div>
             </div>
             <div className='buttonFarRight'>
