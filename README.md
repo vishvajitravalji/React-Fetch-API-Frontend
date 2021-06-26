@@ -11,9 +11,9 @@ Please note on part 5, I am only able to add the tag into each student after the
 
 Steps to add tags are the following:
 
-1) Type into input\
-2) Press 'Enter'\
-3) Start typing again on same input box\
+1) Type into input
+2) Press 'Enter'
+3) Start typing again on same input box
 4) Tag shows up
 
 Note: Unable to figure out how to add tag instantly after a pressing 'Enter', used alternative steps above to solve.
