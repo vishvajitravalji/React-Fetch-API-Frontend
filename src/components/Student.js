@@ -57,7 +57,7 @@ const Student = ({student}) => {
                         if(event.key === 'Enter'){
                             
                             //prevent blank tag from being created
-                            if(tag.trim() != ""){
+                            if(tag.trim() !== ""){
                                 student.tag = [...student.tag, tag]
                             }
 
