@@ -13,7 +13,6 @@ function averageGrade(gradeArray){
 }
 
 const Student = ({student}) => {
-
     // used to deal with showing list of grades and changing + to -
     const [show, setShow] = useState(false);
     const [tag, setTag] = useState("");
@@ -43,29 +42,29 @@ const Student = ({student}) => {
                         ))}
                     </div>:null
                 }
-                {/* Part 5 */}
+
                 {
-                    // <div className='studentTagContainer'>
-                    //         {student.map((eachTag, index)=>(
-                    //             <label key={index + 1} className='studentTag'>{eachTag}</label>
-                    //         ))}
-                    // </div>
+                    <div className='studentTagContainer'>
+                            {student.tag.map((eachTag, index)=>(
+                                <span key={index + 1} className='studentTag'>{eachTag}</span>
+                            ))}
+                    </div>
                 }
 
                 <div className='studentAddTagContainer'>
-
                     <input className="addTagBar" type='text' placeholder='Add a Tag' onChange={(event)=> {setTag(event.target.value);}} onKeyPress={(event) =>{
                         //trigger if enter key is hit in the tag input box
                         if(event.key === 'Enter'){
-                            //if tag property has been exist in Student JSON Object then push current input into it
-                            if({student}.student["tag"]){
+                            
+                            //prevent blank tag from being created
+                            if(tag.trim() != ""){
                                 student.tag = [...student.tag, tag]
-                            //else create tag property in Student JSON Object with the current input in it
-                            }else{
-                                student.tag = [tag]
                             }
 
-                            console.log({student});
+                            //Clears input of all students after you press enter
+                            for(let position = 0; position < document.getElementsByClassName('addTagBar').length; position++){
+                                document.getElementsByClassName('addTagBar')[position].value = '';
+                            }      
                         }
                     }}/>
                 </div>

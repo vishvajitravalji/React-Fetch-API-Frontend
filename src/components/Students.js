@@ -7,28 +7,45 @@ function fullName(firstName, lastName){
     return fullName + firstName + " " + lastName;
 }
 
+//This function goes through the array of tags for a student and returns true if searched tag is exist in the student
+function tagMatch(tag, searchTagTerm){
+    let validCheck = false;
+    
+    for(let position = 0; position < tag.length; position++){
+        if(tag[position].toLowerCase().includes(searchTagTerm.toLowerCase())){
+            validCheck = true;
+        }
+    }
+    return validCheck;
+}
+
 const Students = ({students}) => {
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [searchTagTerm, setSearchTagTerm] = useState("");
     
     return (
         <div className="studentContainer">
             
-            {/*search bar*/}
+            {/*name search bar*/}
             <input className="searchBar" type='text' placeholder="Search by name" onChange={(event) =>{setSearchTerm(event.target.value);}}/>
 
-            {/* Part 5 */}
-            <input className="searchBar searchTagBar" type='text' placeholder="Search by tag"/>
+            {/* tag search tag */}
+            <input className="searchBar searchTagBar" type='text' placeholder="Search by tag" onChange={(event) =>{setSearchTagTerm(event.target.value);}}/>
             
-            {/* filter map results based on Search Bar input */}
+            {/* filter map results based on Name Search Bar & Tag Search Bar input */}
             {students.filter((val)=>{
-                if(searchTerm === ""){
+                if(searchTerm === "" && searchTagTerm === ""){
                     return val;
-                    //name (don't need this because full name covers this case but included just in case)
-                } else if (val.firstName.toLowerCase().includes(searchTerm.toLowerCase())){
+                }else if(val.firstName.toLowerCase().includes(searchTerm.toLowerCase()) && searchTagTerm === ""){
                     return val;
-                    //full name (covers first name too but included both)
-                } else if (fullName(val.firstName, val.lastName).toLowerCase().includes(searchTerm.toLowerCase())){
+                }else if(fullName(val.firstName, val.lastName).toLowerCase().includes(searchTerm.toLowerCase()) && searchTagTerm === ""){
+                    return val;
+                }else if(searchTerm === "" && tagMatch(val.tag, searchTagTerm) === true){
+                    return val;
+                }else if (val.firstName.toLowerCase().includes(searchTerm.toLowerCase()) && tagMatch(val.tag, searchTagTerm) === true){
+                    return val;
+                }else if(fullName(val.firstName, val.lastName).toLowerCase().includes(searchTerm.toLowerCase()) && tagMatch(val.tag, searchTagTerm) === true){
                     return val;
                 }else{
                     return false;
@@ -39,5 +56,4 @@ const Students = ({students}) => {
         </div>
     )
 }
-
 export default Students
