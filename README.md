@@ -1,4 +1,4 @@
-# Frontend Assessment - Student Profiles
+# Frontend Replication with API Fetch - Student Profiles
 
 Completed By: Jason Chi Fai Lee
 
