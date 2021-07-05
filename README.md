@@ -1,4 +1,4 @@
-# Frontend Replication with API Fetch - Student Profiles
+# Frontend ReactJS with API Fetch - Student Profiles
 
 Completed By: Jason Chi Fai Lee
 
@@ -9,7 +9,7 @@ https://frontend-apifetch.herokuapp.com/
 
 ## Notes
 
-Please note on part 5, I am only able to add the tag into each student after the following steps below.
+Please note, I am only able to add the tag into each student after the following steps below.
 
 Steps to add tags are the following:
 
